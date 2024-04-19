@@ -1,0 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground: #eee;
+  --red: #540303;
+  --yellow: #FFE500;
+  --yellow2: #ccb800;
+  --red2: #c90000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@font-face {
+  font-family: 'Audiowide';
+  src: url('../../public/fonts/Audiowide-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Anton';
+  src: url('../../public/fonts/Anton-Regular.ttf');
+}
+
+body {
+  color: var(--foreground);
+  background-image: url("../../public/library1.jpg");
+  background-size: cover;
+  background-position: center bottom;
+  height: 100dvh;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.topAccent {
+  height: 10dvh;
+  width: 100%;
+
+  & .pupLogo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    height: auto;
+    width: 100px;
+    border: var(--red) solid 10px;
+    border-radius: 50%;
+  }
+
+  & .redAccent {
+    position: absolute;
+    color: var(--yellow);
+    left: 0;
+    top: 0;
+    z-index: 10;
+    height: 10dvh;
+    background-color: var(--red);
+    width: 65%;
+    border-bottom-right-radius: 100px;
+
+    & .university {
+      font-size: 1rem;
+      margin-left: 110px;
+      margin-top: 1.5dvh;
+      letter-spacing: 3px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+  }
+
+  & .yellowAccent {
+    position: absolute;
+    color: var(--red);
+    top: 0;
+    right: 0;
+    z-index: 9;
+    height: 10dvh;
+    background-color: var(--yellow);
+    width: 40%;
+
+    & .systemName{
+      position: relative;
+      top: 1.2dvh;
+      right: 30%;
+      font-size: 35px;
+      text-align: right;
+      font-family: 'Audiowide';
+    }
+  }
+}
+
+.bottomAccent {
+  width: 100%;
+
+  & .totals {
+    position: absolute;
+    bottom: 3dvh;
+    display: flex;
+    color: var(--yellow);
+    z-index: 20;
+    width: 60%;
+
+    & .data {
+      margin-left: 5%;
+      text-align: center;
+      padding: 0;
+      
+      & .numberTotal {
+        font-size: 75px;
+        font-weight: bold;
+        height: 85px;
+        font-family: 'Anton';
+        letter-spacing: 3px;
+      }
+
+      & .numberDescription {
+        font-size: 20px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+    }
+  }
+
+  & .admin {
+    position: absolute;
+    bottom: 3dvh;
+    left: 60%;
+    width: 100px;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & .adminIcon {
+      height: auto;
+      width: 70px;
+      border-radius: 50%;
+      border-top-left-radius: 20%;
+      border-top-right-radius: 20%;
+      background-color: var(--yellow);
+    }
+
+    & .adminIcon:hover {
+      background-color: var(--yellow2);
+      color: var(--red2);
+      scale: 0.95;
+      transition: 0.2s;
+    }
+
+    & .adminText {
+      text-align: center;
+      width: 100px;
+      color: var(--yellow);
+    }
+  }
+
+  & .actions {
+    position: absolute;
+    display: flex;
+    bottom: 3dvh;
+    right: 10px;
+    width: 400px;
+    z-index: 20;
+
+    & .subAction {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center horizontally */
+      justify-content: center; /* Center vertically */
+      width: 170px;
+      color: var(--yellow);
+    
+      & .button {
+        height: 140px;
+        width: 120px;
+        border-radius: 20%;
+        background-color: var(--yellow);
+        filter: drop-shadow(10px 4px 4px rgba(0, 0, 0, 0.25));
+
+
+        & .icon {
+          width: 80%;
+          height: auto;
+          margin: auto auto;
+        }
+
+        & .icon-2 {
+          width: 80%;
+          height: auto;
+          margin: auto auto;
+          margin-left: 18px;
+        }
+
+        & .text {
+          width: 100%;
+          color: var(--red);
+        }
+      }
+
+      & .button:hover {
+        background-color: var(--yellow2);
+        color: var(--red2);
+        scale: 0.95;
+        transition: 0.2s;
+      }
+    
+      & .description {
+        width: 170px;
+        font-size: 15px;
+        text-align: center;
+        height: 20px;
+        margin-top: 10px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+    }    
+  }
+
+  & .solidRed{
+    position: absolute;
+    height: 10dvh;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--red);
+    z-index: 15;
+  }
+
+  & .opaqRed{
+    position: absolute;
+    bottom: 0dvh;
+    height: 17dvh;
+    width: 100%;
+    background-color: var(--red);
+    opacity: 40%;
+    z-index: 10;
+  }
+}
