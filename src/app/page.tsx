@@ -4,6 +4,7 @@ import PUPLogo from "../../public/PUPLogo.png";
 export default function Home() {
   return (
     <main>
+
       <div className="topAccent">
         <Image src={PUPLogo} className="pupLogo" alt="PUPLogo" width={100} height={100}></Image>
         <div className="redAccent">
@@ -18,6 +19,34 @@ export default function Home() {
           </p>
         </div>
       </div>
+
+      <div className="midContent">
+        <div className="leftContent">
+          <div className="standby">
+            <div className="welcomeMessage">
+              <p>Welcome!</p>
+            </div>
+            <div className="scanMessage">
+              <div className="circleContainer">
+                <div>
+                  {/* If aninmation is available, place here. */}
+                </div>
+              </div>
+              <p>Please scan your tag</p>
+            </div>
+          </div>
+        </div>
+        <div className="rightContent">
+          <div className="topUsersContainer">
+            <p className="firstUser">Juan Dela Cruz <br/> BSCE</p>
+
+          </div>
+          <div className="topUsersLabel">
+            <p>Top Library Users - Students</p>
+          </div>
+        </div>
+      </div>
+
       <div className="bottomAccent">
         <div className="totals">
           <div className="data">
@@ -34,20 +63,20 @@ export default function Home() {
           </div>
         </div>
         <div className="admin">
-          <button type="button" className="adminIcon" id="adminView">
+          <button title="adminButton" type="button" className="adminIcon" id="adminView">
           <Image src="/admin-panel.png" width={100} height={100} alt="asd"></Image>
           </button>
           <p className="adminText">Admin View</p>
         </div>
         <div className="actions">
           <div className="subAction">
-            <button type="button" className="button" id="register">
+            <button title="registerButton" type="button" className="button" id="register">
               <Image className="icon" src="/user-avatar.png" width={100} height={100} alt=""></Image>
               <p className="text">Register</p></button>
             <p className="description">For new tags</p>
           </div>
           <div className="subAction">
-            <button type="button" className="button" id="manual">
+            <button title="manualButton" type="button" className="button" id="manual">
             <Image className="icon-2" src="/guests-book.png" width={100} height={100} alt=""></Image>
               <p className="text">Manual</p></button>
             <p className="description">For Guests/Alumni</p>
