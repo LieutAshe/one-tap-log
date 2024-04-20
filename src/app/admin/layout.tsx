@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import React from "react";
 import "../globals.css";
 
+
 export const metadata: Metadata = {
     title: "OTL - Admin Access",
     description: "For log exporting and others.",
@@ -12,6 +13,7 @@ export default function adminLayout({
   }: {
     children: React.ReactNode
   }) {
+    
     return (
       <section>
         {/* Include shared UI here e.g. a header or sidebar */}   
