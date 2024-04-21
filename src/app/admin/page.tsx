@@ -9,18 +9,22 @@ import { hasAccess } from '../signin/actions';
 
 export default function Page() {
     const router = useRouter();
-    const hasAccess = false;
 
     useEffect(() => {
-      if(!hasAccess) {
-        router.push('/signin');
+      if(!localStorage.getItem('authenticated')) {
+        router.push('/home');
         return
       }
     }, []);
 
+    const handleLogout = () => {
+      localStorage.setItem('authenticated', 'false');
+      router.push('/home');
+    }
+
     return (
         <main>
-            <Header />
+            <button type='button' onClick={handleLogout}>Log-out</button>
             <Footer />
         </main>
     );
