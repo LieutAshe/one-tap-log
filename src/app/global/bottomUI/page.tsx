@@ -1,9 +1,10 @@
 'use client'
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { signIn } from "@/app/signin/actions"
 
 export default function Page() {
-  const router = useRouter()
+  const router = useRouter();
     return (
         <div className="bottomAccent">
         <div className="totals">
@@ -21,8 +22,8 @@ export default function Page() {
           </div>
         </div>
         <div className="admin">
-          <button title="adminButton" type="button" className="adminIcon" id="adminView">
-          <Image src="/admin-panel.png" width={100} height={100} alt="asd" onClick={() => router.push('/admin')}></Image>
+          <button title="adminButton" type="button" className="adminIcon" id="adminView" onClick={signIn}>
+          <Image src="/admin-panel.png" width={100} height={100} alt="asd"></Image>
           </button>
           <p className="adminText">Admin View</p>
         </div>

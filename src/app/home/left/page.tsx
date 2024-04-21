@@ -7,11 +7,8 @@ export default function Page() {
             </div>
             <div className="scanMessage">
               <div className="circleContainer">
-                <div>
-                  {/* If aninmation is available, place here. */}
-                </div>
+                <p>Please scan your tag</p>
               </div>
-              <p>Please scan your tag</p>
             </div>
           </div>
         </div>
