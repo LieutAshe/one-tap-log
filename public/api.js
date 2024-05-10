@@ -1,6 +1,6 @@
 function fetchlatestLog() {
     const xhr = new XMLHttpRequest();
-    const url = 'http://localhost/phpmyadmin?action=getData';
+    const url = 'api/server.php?action=getData';
   
     xhr.onreadystatechange = function () {
       if(xhr.readyState === XMLHttpRequest.DONE) {
