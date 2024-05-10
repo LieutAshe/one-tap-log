@@ -1,5 +1,3 @@
-
-
 function fetchlatestLog() {
     const xhr = new XMLHttpRequest();
     const url = 'api/server.php?action=getData';
