@@ -1,19 +1,19 @@
-import { sqlSensorReader } from  '@/app/lib/database'
-
+// import { sqlSensorReader } from  '@/app/lib/database'
 export default async function Page() {
-  var data = await sqlSensorReader();
-  const item = data[0];
+  // var data = await sqlSensorReader();
+  // const item = data[0];
 
-  async function listenForNewEntry() {
-    const newData = await sqlSensorReader();
-    if (JSON.stringify(data) !== JSON.stringify(newData)) {
-      console.log("New data is available");
-    }
-    console.log(JSON.stringify(data), JSON.stringify(newData));
-    data = newData;
-  }
+  // async function listenForNewEntry() {
+  //   const newData = await sqlSensorReader();
+  //   if (JSON.stringify(data) !== JSON.stringify(newData)) {
+  //     console.log("New data is available");
+  //     data = newData;
+  //     //reload or rerender
+  //   }
+  //   console.log(JSON.stringify(data), JSON.stringify(newData));
+  // }
 
-  setInterval(listenForNewEntry, 5000);
+  // setInterval(listenForNewEntry, 5000);
 
     return (
         <div className="leftContent">
@@ -23,7 +23,9 @@ export default async function Page() {
             </div>
             <div className="scanMessage">
               <div className="circleContainer">
-                <p>{item.NFCReading}</p>
+                <p id="info" className="hidden">
+                  changes
+                </p>
               </div>
             </div>
           </div>
